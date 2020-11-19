@@ -27,20 +27,21 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
+        <form class="form" action="#" onreset="reset()" onsubmit="save()">
             <div class="form-head-content">
                 <div class="form-head">Person Address Form</div>
                 <a class="form-cancel" href="./home.html"><img src="../assets/icons/cancel.png"></a>
             </div>
             <div class="row-label">Full Name</div>
             <div class="row-content">
-                <input class="input" type="text" name="Name" id="name" placeholder="Enter Full Name" required>
+                <input class="input" type="text" name="name" id="name" placeholder="Enter Full Name" required>
                 <error-output class="name-error" for="text"></error-output>
             </div>
             <div class="row-label">Address</div>
             <div class="row-content">
-                <textarea class="input" id="address" name="Address" placeholder="Address"
+                <textarea class="input" id="address" name="address" placeholder="Address"
                     style="height: 100px;"></textarea>
+                <error-output class="address-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <select class="input" name="state" id="state" required>
@@ -52,18 +53,15 @@
                 <select class="input" name="zip" id="zip" required>
                     <option value="" selected="selected">Select ZIP</option>
                 </select>
-                <!-- <input class="input" type="text" name="State" id="state" placeholder="State" required> -->
-                <!-- <input class="input" type="text" name="City" id="city" placeholder="City" required>
-                <input class="input" type="text" name="Zip" id="zip" placeholder="Zip Code" required> -->
             </div>
             <div class="row-label">Phone Number</div>
             <div class="row-content">
-                <input class="input" type="text" name="Phone" id="phone" placeholder="Phone Number" required>
+                <input class="input" type="text" name="phone" id="phone" placeholder="Phone Number" required>
                 <error-output class="phone-error" for="text"></error-output>
             </div>
             <div class="row-label">Email</div>
             <div class="row-content">
-                <input class="input" type="text" name="Email" id="email" placeholder="Email" required>
+                <input class="input" type="text" name="Email" id="email" placeholder="Email">
                 <error-output class="email-error" for="text"></error-output>
             </div>
             <div class="submit-reset">

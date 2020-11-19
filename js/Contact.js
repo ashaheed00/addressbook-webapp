@@ -1,15 +1,4 @@
 class Contact {
-  //   constructor(...params) {
-  //     this.firstName = params[0];
-  //     this.lastName = params[1];
-  //     this.address = params[2];
-  //     this.city = params[3];
-  //     this.state = params[4];
-  //     this.zip = params[5];
-  //     this.phoneNo = params[6];
-  //     this.email = params[7];
-  //   }
-
   get name() {
     return this._name;
   }
@@ -18,16 +7,17 @@ class Contact {
       "^[A-Z]{1}[a-z]{2,}\\s?([A-Z]{1}[a-z]{1,}\\s?){0,2}$"
     );
     if (nameRegex.test(name)) this._name = name;
-    else throw "Given name is in wrong format";
+    else throw "Given name is in wrong format. Eg. John Smith";
   }
 
   get address() {
     return this._address;
   }
   set address(address) {
-    const nameRegex = RegExp("^[\\w/,\\s]{4,}$");
-    if (nameRegex.test(address)) this._address = address;
-    else throw "Given address is in wrong format";
+    const addressRegex = RegExp("^\\w[\\w\\s/,-]{3,}$");
+    if (addressRegex.test(address)) this._address = address;
+    else
+      throw "Min. 4 characters needed and only -/, allowed as special characters";
   }
 
   get city() {
@@ -61,9 +51,9 @@ class Contact {
     return this._phoneNo;
   }
   set phoneNo(phoneNo) {
-    const phoneNoRegex = RegExp("^[0-9]{5}\\s?[0-9]{5}$");
+    const phoneNoRegex = RegExp("^(\\+?91)?\\s?[0-9]{5}\\s?[0-9]{5}$");
     if (phoneNoRegex.test(phoneNo)) this._phoneNo = phoneNo;
-    else throw "Given zip is in wrong format";
+    else throw "Eg. 9009009001, 919009009001, +919009009001, +91 9009009001";
   }
 
   get email() {
@@ -74,6 +64,6 @@ class Contact {
       "^[a-z][0-9a-z_+-]*\\.?[0-9a-z_+-]+@\\w+(\\.[a-z]{2,}){1,2}$"
     );
     if (emailRegex.test(email)) this._email = email;
-    else throw "Given email is in wrong format";
+    else throw "Wrong email format is given. Eg. abc.def@email.co.in";
   }
 }
