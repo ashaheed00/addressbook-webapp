@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/add_person.css">
+    <title>AddressBook form</title>
+    <script src="../js/AddressBook.js"></script>
+    <script src="../js/addressBook_form.js"></script>
+</head>
+
+<body>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="../assets/images/logo.png">
+            <div>
+                <span class="address-text">Address</span><br>
+                <span class="address-text book">Book</span>
+            </div>
+        </div>
+    </header>
+    <div class="form-content">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
+            <div class="form-head-content">
+                <div class="form-head">Person Address Form</div>
+                <a class="form-cancel" href="./home.html"><img src="../assets/icons/cancel.png"></a>
+            </div>
+            <div class="row-content">
+                <input class="input" type="text" name="Name" id="name" placeholder="Full Name" required>
+                <error-output class="name-error" for="text"></error-output>
+            </div>
+            <div class="row-content">
+                <textarea class="input" id="address" name="Address" placeholder="Address"
+                    style="height: 100px;"></textarea>
+            </div>
+            <div class="row-content">
+                <input class="input" type="text" name="City" id="city" placeholder="City" required>
+                <input class="input" type="text" name="State" id="state" placeholder="State" required>
+                <input class="input" type="text" name="Zip" id="zip" placeholder="Zip Code" required>
+            </div>
+            <div class="row-content">
+                <input class="input" type="text" name="Phone" id="phone" placeholder="Phone Number" required>
+                <error-output class="phone-error" for="text"></error-output>
+            </div>
+            <div class="row-content">
+                <input class="input" type="text" name="Email" id="email" placeholder="Email" required>
+                <error-output class="email-error" for="text"></error-output>
+                `
+            </div>
+            <div class="submit-reset">
+                <button type="submit" class="button submitButton" id="submitButton">Add</button>
+                <button type="reset" class="resetButton button">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
