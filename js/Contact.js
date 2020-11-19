@@ -53,7 +53,8 @@ class Contact {
   set phoneNo(phoneNo) {
     const phoneNoRegex = RegExp("^(\\+?91)?\\s?[0-9]{5}\\s?[0-9]{5}$");
     if (phoneNoRegex.test(phoneNo)) this._phoneNo = phoneNo;
-    else throw "Eg. 9009009001, 919009009001, +919009009001, +91 9009009001";
+    else
+      throw "Wrong Phone Number Format. Eg. 9009009001, 919009009001, +919009009001, +91 9009009001";
   }
 
   get email() {

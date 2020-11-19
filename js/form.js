@@ -76,12 +76,27 @@ const createContact = () => {
     document.querySelector(".name-error").textContent = e;
     throw e;
   }
-  contact.address = getInputValueById("#address");
+  try {
+    contact.address = getInputValueById("#address");
+  } catch (e) {
+    document.querySelector(".address-error").textContent = e;
+    throw e;
+  }
   contact.state = getInputValueById("#state");
   contact.city = getInputValueById("#city");
   contact.zip = getInputValueById("#zip");
-  contact.phoneNo = getInputValueById("#phone");
-  contact.email = getInputValueById("#email");
+  try {
+    contact.phoneNo = getInputValueById("#phone");
+  } catch (e) {
+    document.querySelector(".phone-error").textContent = e;
+    throw e;
+  }
+  try {
+    contact.email = getInputValueById("#email");
+  } catch (e) {
+    document.querySelector(".email-error").textContent = e;
+    throw e;
+  }
   alert(contact);
   return contact;
 };
@@ -94,4 +109,16 @@ const getInputValueById = (id) => {
 const setTextValue = (property, text) => {
   let element = document.querySelector(property);
   element.textContent = text;
+};
+
+// populate to addressbook
+const createAndLoadToAddressBook = (contact) => {
+  let addressbook = JSON.parse(localStorage.getItem("Friends"));
+  if (addressbook != undefined) {
+    addressbook.push(contact);
+  } else {
+    addressbook = [contact];
+  }
+  localStorage.setItem("Friends", JSON.stringify(addressbook));
+  alert(localStorage.getItem("Friends"));
 };
