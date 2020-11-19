@@ -62,6 +62,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 const save = () => {
   try {
     let newContact = createContact();
+    createAndLoadToAddressBook(newContact);
   } catch (e) {
     alert(e);
     return;
