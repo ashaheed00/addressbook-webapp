@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="../css/add_person.css">
     <title>AddressBook Form</title>
     <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
-    <script src="../js/AddressBook.js"></script>
-    <script src="../js/addressBook_form.js"></script>
+    <script src="../js/Contact.js"></script>
+    <script src="../js/form.js"></script>
+    <script src="../js/state_city_zip.js"></script>
 </head>
 
 <body>
@@ -42,9 +43,18 @@
                     style="height: 100px;"></textarea>
             </div>
             <div class="row-content">
-                <input class="input" type="text" name="State" id="state" placeholder="State" required>
-                <input class="input" type="text" name="City" id="city" placeholder="City" required>
-                <input class="input" type="text" name="Zip" id="zip" placeholder="Zip Code" required>
+                <select class="input" name="state" id="state" required>
+                    <option value="" selected="selected">Select State</option>
+                </select>
+                <select class="input" name="city" id="city" required>
+                    <option value="" selected="selected">Select City</option>
+                </select>
+                <select class="input" name="zip" id="zip" required>
+                    <option value="" selected="selected">Select ZIP</option>
+                </select>
+                <!-- <input class="input" type="text" name="State" id="state" placeholder="State" required> -->
+                <!-- <input class="input" type="text" name="City" id="city" placeholder="City" required>
+                <input class="input" type="text" name="Zip" id="zip" placeholder="Zip Code" required> -->
             </div>
             <div class="row-label">Phone Number</div>
             <div class="row-content">
