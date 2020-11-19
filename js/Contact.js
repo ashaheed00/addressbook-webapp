@@ -66,4 +66,23 @@ class Contact {
     if (emailRegex.test(email)) this._email = email;
     else throw "Wrong email format is given. Eg. abc.def@email.co.in";
   }
+
+  toString() {
+    return (
+      "name: " +
+      this.name +
+      ", address: " +
+      this.address +
+      ", state: " +
+      this.state +
+      ", city: " +
+      this.city +
+      ", zip: " +
+      this.zip +
+      ", phoneNo: " +
+      this.phoneNo +
+      ", email = " +
+      this.email
+    );
+  }
 }

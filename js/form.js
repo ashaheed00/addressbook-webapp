@@ -57,3 +57,41 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 });
+
+// Methods to save on submit and reset
+const save = () => {
+  try {
+    let newContact = createContact();
+  } catch (e) {
+    alert(e);
+    return;
+  }
+};
+
+const createContact = () => {
+  let contact = new Contact();
+  try {
+    contact.name = getInputValueById("#name");
+  } catch (e) {
+    document.querySelector(".name-error").textContent = e;
+    throw e;
+  }
+  contact.address = getInputValueById("#address");
+  contact.state = getInputValueById("#state");
+  contact.city = getInputValueById("#city");
+  contact.zip = getInputValueById("#zip");
+  contact.phoneNo = getInputValueById("#phone");
+  contact.email = getInputValueById("#email");
+  alert(contact);
+  return contact;
+};
+
+const getInputValueById = (id) => {
+  let value = document.querySelector(id).value;
+  return value;
+};
+
+const setTextValue = (property, text) => {
+  let element = document.querySelector(property);
+  element.textContent = text;
+};
