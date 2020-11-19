@@ -9,7 +9,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/add_person.css">
-    <title>AddressBook form</title>
+    <title>AddressBook Form</title>
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
     <script src="../js/AddressBook.js"></script>
     <script src="../js/addressBook_form.js"></script>
 </head>
@@ -19,8 +20,8 @@
         <div class="logo-content">
             <img src="../assets/images/logo.png">
             <div>
-                <span class="address-text">Address</span><br>
-                <span class="address-text book">Book</span>
+                <span class="adbk-text">Address</span><br>
+                <span class="adbk-text book">Book</span>
             </div>
         </div>
     </header>
@@ -30,27 +31,30 @@
                 <div class="form-head">Person Address Form</div>
                 <a class="form-cancel" href="./home.html"><img src="../assets/icons/cancel.png"></a>
             </div>
+            <div class="row-label">Full Name</div>
             <div class="row-content">
-                <input class="input" type="text" name="Name" id="name" placeholder="Full Name" required>
+                <input class="input" type="text" name="Name" id="name" placeholder="Enter Full Name" required>
                 <error-output class="name-error" for="text"></error-output>
             </div>
+            <div class="row-label">Address</div>
             <div class="row-content">
                 <textarea class="input" id="address" name="Address" placeholder="Address"
                     style="height: 100px;"></textarea>
             </div>
             <div class="row-content">
-                <input class="input" type="text" name="City" id="city" placeholder="City" required>
                 <input class="input" type="text" name="State" id="state" placeholder="State" required>
+                <input class="input" type="text" name="City" id="city" placeholder="City" required>
                 <input class="input" type="text" name="Zip" id="zip" placeholder="Zip Code" required>
             </div>
+            <div class="row-label">Phone Number</div>
             <div class="row-content">
                 <input class="input" type="text" name="Phone" id="phone" placeholder="Phone Number" required>
                 <error-output class="phone-error" for="text"></error-output>
             </div>
+            <div class="row-label">Email</div>
             <div class="row-content">
                 <input class="input" type="text" name="Email" id="email" placeholder="Email" required>
                 <error-output class="email-error" for="text"></error-output>
-                `
             </div>
             <div class="submit-reset">
                 <button type="submit" class="button submitButton" id="submitButton">Add</button>

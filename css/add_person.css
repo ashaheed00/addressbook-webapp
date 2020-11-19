@@ -30,7 +30,7 @@ body {
   width: 4%;
 }
 
-.address-text {
+.adbk-text {
   font: normal normal bold 20px/15px Montserrat;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0px;
@@ -92,6 +92,17 @@ body {
 
 .form-cancel img {
   width: 100%;
+}
+
+.row-label {
+  display: flex;
+  padding-right: 50px;
+  padding-left: 50px;
+  flex-direction: row;
+  margin-bottom: 5px;
+  align-items: center;
+  border: 0px solid green;
+  font: normal normal normal 15px/10px Roboto;
 }
 
 .row-content {
