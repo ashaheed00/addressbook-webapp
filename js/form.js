@@ -72,6 +72,7 @@ const save = () => {
 
 const createContact = () => {
   let contact = new Contact();
+  contact.id = new Date().getTime();
   try {
     contact.name = getInputValueById("#name");
   } catch (e) {
