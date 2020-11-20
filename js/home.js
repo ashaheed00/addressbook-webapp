@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   addresbook = getAddressbookFromLocalStorage();
   document.querySelector(".person-count").textContent = addresbook.length;
   createInnerHtml();
+  localStorage.removeItem("editContact");
 });
 
 const createInnerHtml = () => {
@@ -51,4 +52,12 @@ const remove = (node) => {
   localStorage.setItem("Friends", JSON.stringify(addresbook));
   document.querySelector(".person-count").textContent = addresbook.length;
   createInnerHtml();
+};
+
+//update
+const update = (node) => {
+  let contactData = addresbook.find((contact) => contact._id == node.id);
+  if (!contactData) return;
+  localStorage.setItem("editContact", JSON.stringify(contactData));
+  window.location.href = site_properties.add_contact_page;
 };
