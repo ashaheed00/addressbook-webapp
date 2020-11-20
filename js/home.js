@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 const createInnerHtml = () => {
   const headerHtml =
     "<tr><th></th><th>Fullname</th><th>Address</th><th>State</th><th>City</th><th>Zip Code</th><th>Phone Number</th><th>Email</th><th></th></tr>";
-  let addresbook = createAddressbookJSON();
+  let addresbook = getAddressbookFromLocalStorage();
   let innerHtml = `${headerHtml}`;
   for (let contact of addresbook) {
     innerHtml = `
@@ -26,40 +26,13 @@ const createInnerHtml = () => {
       </tr>
       `;
   }
-  console.log(innerHtml);
   document.querySelector("#table-display").innerHTML = innerHtml;
 };
 
-const createAddressbookJSON = () => {
-  let addresbook = [
-    {
-      _name: "Kabir",
-      _address: "C BLOCK, ROOM NO - C21, PRINCE ANWAR SHAH ROAD",
-      _state: "West Bengal",
-      _city: "Kolkata",
-      _zip: "700001",
-      _phoneNo: "9851604355",
-      _email: "ashaheed00@gmail.com",
-    },
-    {
-      _name: "Gautham Menon",
-      _address: "Prince Anwar Shah Road, Poddar Nagar, Jadavpur",
-      _state: "Kerala",
-      _city: "Ernakulam",
-      _zip: "689002",
-      _phoneNo: "8016426257",
-      _email: "ukil94jubeng@gmail.com",
-    },
-    {
-      _name: "Jose",
-      _address: "C BLOCK, PRINCE ANWAR SHAH ROAD",
-      _state: "West Bengal",
-      _city: "Kolkata",
-      _zip: "700002",
-      _phoneNo: "9851604355",
-      _email: "ashaheed00@gmail.com",
-    },
-  ];
-
-  return addresbook;
+const getAddressbookFromLocalStorage = () => {
+  return localStorage.getItem("Friends")
+    ? JSON.parse(localStorage.getItem("Friends"))
+    : [];
 };
+
+const createAddressbookJSON = () => {};
