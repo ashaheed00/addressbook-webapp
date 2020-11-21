@@ -153,3 +153,23 @@ td img:first-child {
 td img {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+  .logo-content img {
+    border: solid 0px #42515f;
+    width: 12%;
+  }
+  .table-main {
+    width: 95%;
+  }
+
+  .person-detail-text,
+  .add-button {
+    font-size: 16px;
+  }
+  .person-count {
+    width: 18px;
+    border-radius: 30%;
+    font-size: 12px;
+  }
+}
